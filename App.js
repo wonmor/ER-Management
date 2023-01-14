@@ -13,8 +13,6 @@ Business Model:
 Let the user use the app for free for a limited time, and then charge them a subscription fee.
 */
 
-const store = configureStore({ reducer: rootReducer, middleware: [thunk] });
-
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
