@@ -1,6 +1,7 @@
 import Doctor from './components/Doctor';
 import Login from './components/Login';
 import FrontDesk from './components/FrontDesk';
+import EmergencyType from './components/EmergencyType';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -28,20 +29,25 @@ const AppNavigator = () => {
             headerTintColor: 'white',
             contentStyle: { backgroundColor: '#394d6d' },
         }}>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Login"
           component={Login}
-          options={{ title: 'Login.' }}
+          options={{ title: 'Login' }}
         />
         <Stack.Screen
           name="Doctor"
           component={Doctor}
-          options={{ title: 'Doctor.' }}
+          options={{ title: 'Doctor' }}
         />
         <Stack.Screen
           name="Front Desk"
           component={FrontDesk}
-          options={{ title: 'Front Desk.' }}
+          options={{ title: 'Front Desk' }}
+        /> */}
+        <Stack.Screen
+          name="Emergency Type"
+          component={EmergencyType}
+          options={{ title: 'Emergency Type' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
