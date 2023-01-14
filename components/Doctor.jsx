@@ -2,8 +2,12 @@
 // Show the list of patients based upon the priority (which is determined by severity rating and wait time)
 // John
 
+import { Text } from 'react-native';
+
 const Doctor = () => {
-    <Text>This is doctor</Text>
+    return (
+        <Text>This is doctor</Text>
+    );
 };
 
 export default Doctor;
