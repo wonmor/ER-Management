@@ -1,17 +1,15 @@
 // Select whether you are a front desk staff or a doctor...
 // Tom
 
-import { Text } from 'react-native';
-//import React, { Component } from 'react'
-//import { Button } from 'react-native'
+
 import React from 'react';
-import { View, StyleSheet, Button } from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const styles = StyleSheet.create({
     buttonContainer: {
       alignItems: 'center',
       justifyContent: 'center',
-      margin: 10,
+      margin: 20,
     },
     button: {
       backgroundColor: '#4CAF50',
@@ -24,31 +22,41 @@ const styles = StyleSheet.create({
     buttonText: {
       color: 'white',
       fontWeight: 'bold',
-  }
+    }
 });
 
 const Login = () => {
-    const handlePress = () => false
     return (
-        //<Text>This is the log in screen</Text>
-
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <View style={styles.buttonContainer}>
-        <Button 
-          title="Front Desk" 
-          style={styles.button}
-          titleStyle={styles.buttonText}
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button 
-          title="Doctors" 
-          style={styles.button}
-          titleStyle={styles.buttonText}
-        />
-      </View>
-    </View>
+        <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Front Desk</Text>
+        </TouchableOpacity>
+        </View>
+
+        
+        <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Doctors</Text>
+        </TouchableOpacity>
+        </View>
+        </View>
+
+     
+         
     );
 };
 
 export default Login;
+
+
+
+
+
+
+
+
+
+
+  
+

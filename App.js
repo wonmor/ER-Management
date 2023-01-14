@@ -29,12 +29,12 @@ const AppNavigator = () => {
             headerTintColor: 'white',
             contentStyle: { backgroundColor: '#394d6d' },
         }}>
-        {/* <Stack.Screen
+        {<Stack.Screen
           name="Login"
           component={Login}
           options={{ title: 'Login.' }}
         />
-        <Stack.Screen
+        /*<Stack.Screen
           name="Doctor"
           component={Doctor}
           options={{ title: 'Doctor.' }}
