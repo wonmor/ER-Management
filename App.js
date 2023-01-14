@@ -1,5 +1,5 @@
 import Doctor from './components/Doctor';
-import Login from './components/Home';
+import Login from './components/Login';
 import FrontDesk from './components/FrontDesk';
 
 import { NavigationContainer } from '@react-navigation/native';
