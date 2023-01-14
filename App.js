@@ -1,20 +1,58 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Doctor from './components/Doctor';
+import Login from './components/Home';
+import FrontDesk from './components/FrontDesk';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+/*
+ELECTRONIFY: A React Native App for Visualizing Quantum Mechanics
+Developed and Designed by John Seong
+--------------------------------------------------------------------
+Business Model:
+Let the user use the app for free for a limited time, and then charge them a subscription fee.
+*/
+
+const store = configureStore({ reducer: rootReducer, middleware: [thunk] });
+
+const Stack = createNativeStackNavigator();
+
+const AppNavigator = () => {
+  return (
+    <NavigationContainer>
+       <Stack.Navigator
+          screenOptions={{
+            headerStyle: { elevation: 0, backgroundColor: '#1c2e4a'},
+            headerTitleStyle: {
+              color: 'white',
+              fontFamily: 'Outfit_600SemiBold',
+              fontSize: 30,
+            },
+            headerTintColor: 'white',
+            contentStyle: { backgroundColor: '#394d6d' },
+        }}>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ title: 'Login.' }}
+        />
+        <Stack.Screen
+          name="Doctor"
+          component={Doctor}
+          options={{ title: 'Doctor.' }}
+        />
+        <Stack.Screen
+          name="Front Desk"
+          component={FrontDesk}
+          options={{ title: 'Front Desk.' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AppNavigator />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
