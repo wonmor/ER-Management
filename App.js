@@ -25,7 +25,6 @@ const AppNavigator = () => {
             headerStyle: { elevation: 0, backgroundColor: '#1c2e4a'},
             headerTitleStyle: {
               color: 'white',
-              fontFamily: 'Outfit_600SemiBold',
               fontSize: 30,
             },
             headerTintColor: 'white',
