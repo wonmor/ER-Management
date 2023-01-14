@@ -2,11 +2,18 @@
 // Injury type
 // Sajjad and Kevin
 
-import { Text } from 'react-native';
+import { Text, Button } from 'react-native';
 
-const FrontDesk = () => {
+const FrontDesk = ({ navigation }) => {
     return (
-        <Text>This is front desk</Text>
+        <Button
+  onPress={() => {
+    navigation.push('AddPatient')
+  }}
+  title="Add patient"
+  color="#FF0000"
+  accessibilityLabel="Add a patient to the ER waitlist."
+/>
     );
 };
 
