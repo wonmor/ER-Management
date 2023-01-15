@@ -3,9 +3,9 @@
 
 
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const Welcome = ({ navigation }) => {
+const Hospital = ({ navigation }) => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextHeader]}>
@@ -35,7 +35,7 @@ const Welcome = ({ navigation }) => {
     );
 };
 
-export default Welcome;
+export default Hospital;
 
 const styles = StyleSheet.create({
     welcomeText: {

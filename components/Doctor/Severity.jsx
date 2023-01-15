@@ -25,7 +25,7 @@ export default function App() {
           {numbers.map((number) => (
               <>
                 <TouchableOpacity onPress={() => setRating(number)}>
-                  <Image source={rating >= number ? require('../assets/filledCircle.png') : require('../assets/unfilledCircle.png')} style={styles.star} />
+                  <Image source={rating >= number ? require('../../assets/filledCircle.png') : require('../../assets/unfilledCircle.png')} style={styles.star} />
                 </TouchableOpacity>
               </>
           ))}

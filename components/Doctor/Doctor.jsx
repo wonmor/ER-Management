@@ -6,7 +6,7 @@ import { doc, getDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 
-import db from '../config/firebase';
+import db from '../../config/firebase';
 
 const Doctor = ({ navigation }) => {
     const docRef = doc(db, 'mcmaster-health', 'doctors');
