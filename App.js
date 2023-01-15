@@ -1,9 +1,9 @@
-import Doctor from './components/Doctor/Doctor';
+import Doctor from './components/doctor/Doctor';
 import Home from './components/Home';
 import Hospital from './components/Hospital';
-import FrontDesk from './components/FrontDesk/FrontDesk';
-import Severity from './components/Doctor/Severity';
-import AddPatient from './components/FrontDesk/AddPatient';
+import FrontDesk from './components/front_desk/FrontDesk';
+import Severity from './components/doctor/Severity';
+import AddPatient from './components/front_desk/AddPatient';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
