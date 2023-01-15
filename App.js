@@ -1,7 +1,7 @@
 import Doctor from './components/Doctor';
 import Login from './components/Login';
 import FrontDesk from './components/FrontDesk';
-import EmergencyType from './components/EmergencyType';
+import Severity from './components/Severity';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -45,9 +45,9 @@ const AppNavigator = () => {
           options={{ title: 'Front Desk' }}
         /> */}
         <Stack.Screen
-          name="Emergency Type"
-          component={EmergencyType}
-          options={{ title: 'Emergency Type' }}
+          name="Severity"
+          component={Severity}
+          options={{ title: 'Severity' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
