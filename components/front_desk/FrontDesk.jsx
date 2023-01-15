@@ -8,7 +8,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 const FrontDesk = ({ navigation }) => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> 
-          <Text style={[{fontFamily: 'Outfit_400Regular', marginBottom: 20}, styles.listTextTitle]}>
+          <Text style={[{fontFamily: 'Outfit_400Regular', marginBottom: 20}, styles.welcomeText]}>
             Incoming Patients
           </Text>
 
@@ -24,6 +24,13 @@ const FrontDesk = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  welcomeText: {
+    fontSize: 32,
+    textAlign: 'center',
+    margin: 10,
+    marginTop: 50,
+    color: "#ffffff"
+  },
   welcomeText: {
       fontSize: 32,
       textAlign: 'center',

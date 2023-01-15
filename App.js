@@ -2,7 +2,7 @@ import Doctor from './components/doctor/Doctor';
 import Home from './components/Home';
 import Hospital from './components/Hospital';
 import FrontDesk from './components/front_desk/FrontDesk';
-import Severity from './components/doctor/Severity';
+import Severity from './components/front_desk/Severity';
 import AddPatient from './components/front_desk/AddPatient';
 
 import { NavigationContainer } from '@react-navigation/native';
