@@ -4,7 +4,11 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function App() {
+const Severity = (props) => {
+  const { navigation } = props;
+
+  const otherParam = navigation.getParam('otherParam', 'some default value');
+
   const [rating, setRating] = useState(0);
   const [numbers, setNumbers] = useState([]);
 
@@ -39,7 +43,9 @@ export default function App() {
       </View>
     </SafeAreaView>
   );
-}
+};
+
+export default Severity;
 
 const styles = StyleSheet.create({
   container: {
