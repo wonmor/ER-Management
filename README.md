@@ -1,4 +1,4 @@
-# ER-Management
+# ERMs: Emergency Department, Reimagined
 
 Developed by John, Sajjad, Tom and Kevin
 
