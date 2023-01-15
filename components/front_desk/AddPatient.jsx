@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import { doc, getDoc } from 'firebase/firestore';
+import db from '../../config/firebase'
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { applyFileNamingScheme, capitalizeName } from '../Globals';
 
-import db from '../../config/firebase';
 
 const AddPatient = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -40,12 +41,19 @@ const AddPatient = ({ navigation }) => {
           }
   }, [])
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     // Perform actions on submit, such as sending data to a server
-    console.log(`Name: ${name}`);
-    console.log(`DOB: ${selectedDay} ${selectedMonth} ${selectedYear}`);
-    console.log(`Doctor Type: ${selectedDoctor}`);
-  };
+    const patientRef = doc(db, 'mcmaster-health', 'patients');
+
+    let obj = {};
+    obj[applyFileNamingScheme(name)] = {
+      DOB: `${selectedDay} ${selectedMonth} ${selectedYear}`,
+      doctor: selectedDoctor,
+      name: capitalizeName(name),
+    }
+  
+    await updateDoc(patientRef, obj);
+};
 
   return (
     <View style={styles.container}>
@@ -96,10 +104,17 @@ const AddPatient = ({ navigation }) => {
 
       <View style={styles.listButton}>
           <TouchableOpacity onPress={() => {
-              handleSubmit();
-              navigation.navigate('Severity', {
-                patients: names,
+              handleSubmit()
+                .then(() => {
+                  console.log('Patient added to Firestore!');
+                  navigation.navigate('Severity', {
+                    patients: names,
+                  });
+              })
+              .catch((error) => {
+                  console.error('Error adding patient: ', error);
               });
+              
           }} style={styles.button}>
               <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextTitle]}>Submit</Text>
           </TouchableOpacity>
