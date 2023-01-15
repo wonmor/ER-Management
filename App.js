@@ -1,9 +1,9 @@
-import Doctor from './components/doctor/Doctor';
+import Doctor from './components/Doctor/Doctor';
 import Home from './components/Home';
 import Hospital from './components/Hospital';
-import FrontDesk from './components/front_desk/FrontDesk';
-import Severity from './components/doctor/Severity';
-import AddPatient from './components/front_desk/AddPatient';
+import FrontDesk from './components/FrontDesk/FrontDesk';
+import Severity from './components/Doctor/Severity';
+import AddPatient from './components/FrontDesk/AddPatient';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -22,29 +22,39 @@ const screens = [
 
 const AppNavigator = () => {
   return (
-      <NavigationContainer>
-          <Stack.Navigator
-              screenOptions={{
-                  headerStyle: { elevation: 0, backgroundColor: '#334155' },
-                  headerTitleStyle: {
-                      color: 'white',
-                      fontSize: 30,
-                      fontFamily: 'Outfit_600SemiBold',
-                  },
-                  headerTintColor: 'white',
-                  contentStyle: { backgroundColor: '#1e293b' },
-              }}
-          >
-              {screens.map((screen, index) => (
-                  <Stack.Screen
-                      key={index}
-                      name={screen.name}
-                      component={screen.component}
-                      options={{ title: screen.title }}
-                  />
-              ))}
-          </Stack.Navigator>
-      </NavigationContainer>
+    <NavigationContainer>
+       <Stack.Navigator
+          screenOptions={{
+            headerStyle: { elevation: 0, backgroundColor: '#1c2e4a'},
+            headerTitleStyle: {
+              color: 'white',
+              fontSize: 30,
+            },
+            headerTintColor: 'white',
+            contentStyle: { backgroundColor: '#394d6d' },
+        }}>
+        {/* <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ title: 'Login' }}
+        />
+        <Stack.Screen
+          name="Doctor"
+          component={Doctor}
+          options={{ title: 'Doctor' }}
+        />
+        <Stack.Screen
+          name="FrontDesk"
+          component={FrontDesk}
+          options={{ title: 'Front Desk' }}
+        /> */}
+        <Stack.Screen
+          name="Severity"
+          component={Severity}
+          options={{ title: 'Severity' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
