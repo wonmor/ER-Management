@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { doc, getDoc } from 'firebase/firestore';
+
+import db from '../../config/firebase';
 
 const AddPatient = ({ navigation }) => {
   const [name, setName] = useState('');
@@ -8,6 +11,34 @@ const AddPatient = ({ navigation }) => {
   const [selectedMonth, setSelectedMonth] = useState('January');
   const [selectedYear, setSelectedYear] = useState('2000');
   const [selectedDoctor, setSelectedDoctor] = useState('Pediatrician');
+  const docRef = doc(db, 'mcmaster-health', 'patients');
+  const docSnap = getDoc(docRef);
+
+  const [firstRun, setFirstRun] = useState(true);
+  const [names, setNames] = useState([]);
+  const [dataList, setDataList] = useState([]);
+
+  useEffect(() => {
+      if (firstRun) {
+          docSnap
+              .then(doc => {
+                  if (doc.exists) {
+                      const data = doc.data();
+                      for (const field in data) {
+                          setNames(names.concat(field));
+                          setDataList(dataList.concat(data[field]));
+                      }
+                  } else {
+                      console.log("No such document!");
+                  }
+              })
+              .catch(error => {
+                  console.log("Error getting document:", error);
+              });
+
+              setFirstRun(false);
+          }
+  }, [])
 
   const handleSubmit = () => {
     // Perform actions on submit, such as sending data to a server
@@ -66,7 +97,9 @@ const AddPatient = ({ navigation }) => {
       <View style={styles.listButton}>
           <TouchableOpacity onPress={() => {
               handleSubmit();
-              navigation.navigate('FrontDesk');
+              navigation.navigate('Severity', {
+                patients: names,
+              });
           }} style={styles.button}>
               <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextTitle]}>Submit</Text>
           </TouchableOpacity>

@@ -2,42 +2,10 @@
 // Injury type
 // Sajjad and Kevin
 
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { doc, getDoc } from 'firebase/firestore';
-
-import db from '../../config/firebase';
 
 const FrontDesk = ({ navigation }) => {
-    const docRef = doc(db, 'mcmaster-health', 'patients');
-    const docSnap = getDoc(docRef);
-
-    const [firstRun, setFirstRun] = useState(true);
-    const [names, setNames] = useState([]);
-    const [dataList, setDataList] = useState([]);
-
-    useEffect(() => {
-        if (firstRun) {
-            docSnap
-                .then(doc => {
-                    if (doc.exists) {
-                        const data = doc.data();
-                        for (const field in data) {
-                            setNames(names.concat(field));
-                            setDataList(dataList.concat(data[field]));
-                        }
-                    } else {
-                        console.log("No such document!");
-                    }
-                })
-                .catch(error => {
-                    console.log("Error getting document:", error);
-                });
-
-                setFirstRun(false);
-            }
-    }, [])
-    
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> 
           <Text style={[{fontFamily: 'Outfit_400Regular', marginBottom: 20}, styles.welcomeText]}>
@@ -47,9 +15,6 @@ const FrontDesk = ({ navigation }) => {
             <View style={styles.listButton}>
                 <TouchableOpacity onPress={() => {
                     navigation.push('AddPatient');
-                    navigation.navigate('Severity', {
-                      patients: names,
-                    });
                 }} style={styles.button}>
                     <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextTitle]}>Add New</Text>
                 </TouchableOpacity>
