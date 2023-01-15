@@ -31,10 +31,10 @@ export default function App() {
           ))}
         </View>
         <View style={styles.stars}>
-          <Ionicons name="ios-arrow-forward" size={32} color="black" />
+          <Ionicons name="arrow-back-outline" size={32} color="white" />
           <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.label]}>Minor</Text>
           <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.label]}>Urgent</Text>
-          <Ionicons name="ios-arrow-forward" size={32} color="black" />
+          <Ionicons name="arrow-forward-outline" size={32} color="white" />
         </View>
       </View>
     </SafeAreaView>
@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
   stars: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   star: {
     width: 50,
