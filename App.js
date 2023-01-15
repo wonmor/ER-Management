@@ -1,7 +1,7 @@
 import Doctor from './components/Doctor';
 import Login from './components/Login';
 import FrontDesk from './components/FrontDesk';
-import AddPatient from './components/AddPatient';
+import Severity from './components/Severity';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -29,7 +29,7 @@ const AppNavigator = () => {
             headerTintColor: 'white',
             contentStyle: { backgroundColor: '#394d6d' },
         }}>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Login"
           component={Login}
           options={{ title: 'Login' }}
@@ -43,11 +43,19 @@ const AppNavigator = () => {
           name="FrontDesk"
           component={FrontDesk}
           options={{ title: 'Front Desk' }}
+<<<<<<< HEAD
         />
         <Stack.Screen
           name="AddPatient"
           component={AddPatient}
           options={{ title: 'Add Patient' }}
+=======
+        /> */}
+        <Stack.Screen
+          name="Severity"
+          component={Severity}
+          options={{ title: 'Severity' }}
+>>>>>>> 3059c4dac40eb27021cef63edbf4b6dbc27dfb2f
         />
       </Stack.Navigator>
     </NavigationContainer>
