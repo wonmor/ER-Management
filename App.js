@@ -1,20 +1,23 @@
 import Doctor from './components/Doctor';
-import Login from './components/Login';
+import Welcome from './components/Welcome';
 import FrontDesk from './components/FrontDesk';
 import Severity from './components/Severity';
+import AddPatient from './components/AddPatient';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-/*
-ELECTRONIFY: A React Native App for Visualizing Quantum Mechanics
-Developed and Designed by John Seong
---------------------------------------------------------------------
-Business Model:
-Let the user use the app for free for a limited time, and then charge them a subscription fee.
-*/
+import { useFonts, Outfit_400Regular, Outfit_600SemiBold } from '@expo-google-fonts/outfit';
 
 const Stack = createNativeStackNavigator();
+
+const screens = [
+  { name: 'Welcome', component: Welcome, title: 'Welcome' },
+  { name: 'Doctor', component: Doctor, title: 'Doctors' },
+  { name: 'FrontDesk', component: FrontDesk, title: 'Front Desk' },
+  { name: 'AddPatient', component: AddPatient, title: 'Add Patient' },
+  { name: 'Severity', component: Severity, title: 'Severity' },
+];
 
 const AppNavigator = () => {
   return (
@@ -29,7 +32,7 @@ const AppNavigator = () => {
             headerTintColor: 'white',
             contentStyle: { backgroundColor: '#394d6d' },
         }}>
-         <Stack.Screen
+        {/* <Stack.Screen
           name="Login"
           component={Login}
           options={{ title: 'Login' }}
@@ -43,7 +46,7 @@ const AppNavigator = () => {
           name="FrontDesk"
           component={FrontDesk}
           options={{ title: 'Front Desk' }}
-        /> 
+        /> */}
         <Stack.Screen
           name="Severity"
           component={Severity}
@@ -55,6 +58,15 @@ const AppNavigator = () => {
 };
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Outfit_400Regular,
+    Outfit_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+  
   return (
     <AppNavigator />
   );
