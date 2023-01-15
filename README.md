@@ -1,6 +1,6 @@
 # ER-Management
 
-Developed by our Team.
+Developed by John, Sajjad, Tom and Kevin
 
 <img width="512" alt="slides 3" src="https://user-images.githubusercontent.com/93741234/212554740-55b9ed34-93ee-4a34-a128-bd7d4bba9b55.PNG">
 
