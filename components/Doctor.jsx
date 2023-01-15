@@ -2,12 +2,93 @@
 // Show the list of patients based upon the priority (which is determined by severity rating and wait time)
 // John
 
-import { Text } from 'react-native';
+import { doc, getDoc } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 
-const Doctor = () => {
+import db from '../config/firebase';
+
+const Doctor = ({ navigation }) => {
+    const docRef = doc(db, 'mcmaster-health', 'doctors');
+    const docSnap = getDoc(docRef);
+
+    const [firstRun, setFirstRun] = useState(true);
+    const [names, setNames] = useState([]);
+    const [dataList, setDataList] = useState([]);
+
+    useEffect(() => {
+        if (firstRun) {
+            docSnap
+                .then(doc => {
+                    if (doc.exists) {
+                        const data = doc.data();
+                        for (const field in data) {
+                            setNames(names.concat(field));
+                            setDataList(dataList.concat(data[field]));
+                        }
+                    } else {
+                        console.log("No such document!");
+                    }
+                })
+                .catch(error => {
+                    console.log("Error getting document:", error);
+                });
+
+                setFirstRun(false);
+            }
+    }, [])
+
     return (
-        <Text>This is doctor</Text>
+        <>
+            <Text style={styles.welcomeText}>Select Profile</Text>
+            <FlatList
+                contentContainerStyle={styles.listContent}
+                data={dataList}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({ item }) => (
+                    <TouchableOpacity onPress={() => {
+                        navigation.navigate('Patient', {
+                            name: item.name,
+                            age: item.age,
+                        });
+                    }} style={styles.listButton} activeOpacity={0.8}>
+                        <Text style={styles.listText}>{item.name}</Text>
+                    </TouchableOpacity>
+                )}
+            />
+    
+        </>
     );
 };
 
 export default Doctor;
+
+const styles = StyleSheet.create({
+    welcomeText: {
+        fontSize: 32,
+        textAlign: 'center',
+        margin: 10,
+        marginTop: 50,
+        color: "#ffffff"
+    },
+    listButton: {
+        marginBottom: 10,
+        backgroundColor: '#394d6d',
+        padding: 15,
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 1,
+        elevation: 1,
+    },
+    listContent: {
+        margin: 10,
+        marginStart: 50,
+        marginEnd: 50
+    },
+    listText: {
+        textAlign: "center",
+        fontSize: 18,
+        color: "#fff"
+    }
+});
+  
