@@ -32,22 +32,22 @@ const AppNavigator = () => {
         <Stack.Screen
           name="Login"
           component={Login}
-          options={{ title: 'Login.' }}
+          options={{ title: 'Login' }}
         />
         <Stack.Screen
           name="Doctor"
           component={Doctor}
-          options={{ title: 'Doctor.' }}
+          options={{ title: 'Doctor' }}
         />
         <Stack.Screen
           name="FrontDesk"
           component={FrontDesk}
-          options={{ title: 'Front Desk.' }}
+          options={{ title: 'Front Desk' }}
         />
         <Stack.Screen
           name="AddPatient"
           component={AddPatient}
-          options={{ title: 'Add Patient.' }}
+          options={{ title: 'Add Patient' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

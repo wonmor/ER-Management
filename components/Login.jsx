@@ -9,15 +9,17 @@ const styles = StyleSheet.create({
     buttonContainer: {
       alignItems: 'center',
       justifyContent: 'center',
-      margin: 20,
+      margin: 90,
     },
     button: {
-      backgroundColor: '#4CAF50',
-      padding: 10,
-      borderRadius: 5,
-      borderWidth: 1,
-      borderColor: '#3E8E41',
-      width: '70%'
+      backgroundColor: '#FF0000',
+      padding: 28,
+      borderRadius: 50,
+      borderWidth: 5,
+      borderColor: '#DD571C',
+      width: 150,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     buttonText: {
       color: 'white',
@@ -38,7 +40,9 @@ const Login = ({ navigation }) => {
             </View>
 
             <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity onPress={() => {
+                    navigation.push('Doctor');
+                }} style={styles.button}>
                     <Text style={styles.buttonText}>Doctors</Text>
                 </TouchableOpacity>
             </View>
