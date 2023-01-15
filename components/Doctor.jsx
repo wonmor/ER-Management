@@ -40,7 +40,7 @@ const Doctor = ({ navigation }) => {
 
     return (
         <>
-            <Text style={styles.welcomeText}>Select Profile</Text>
+            <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.welcomeText]}>Select Profile</Text>
             <FlatList
                 contentContainerStyle={styles.listContent}
                 data={dataList}
@@ -52,8 +52,8 @@ const Doctor = ({ navigation }) => {
                             age: item.age,
                         });
                     }} style={styles.listButton} activeOpacity={0.8}>
-                        <Text style={styles.listTextTitle}>{item.name}</Text>
-                        <Text style={styles.listTextDescription}>{item.field}</Text>
+                        <Text style={[{fontFamily: 'Outfit_600SemiBold'}, styles.listTextTitle]}>{item.name}</Text>
+                        <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextDescription]}>{item.field}</Text>
                     </TouchableOpacity>
                 )}
             />

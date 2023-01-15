@@ -1,5 +1,5 @@
 import Doctor from './components/Doctor';
-import Login from './components/Login';
+import Welcome from './components/Welcome';
 import FrontDesk from './components/FrontDesk';
 import Severity from './components/Severity';
 import AddPatient from './components/AddPatient';
@@ -11,52 +11,39 @@ import { useFonts, Outfit_400Regular, Outfit_600SemiBold } from '@expo-google-fo
 
 const Stack = createNativeStackNavigator();
 
+const screens = [
+  { name: 'Welcome', component: Welcome, title: 'Welcome' },
+  { name: 'Doctor', component: Doctor, title: 'Doctors' },
+  { name: 'FrontDesk', component: FrontDesk, title: 'Front Desk' },
+  { name: 'AddPatient', component: AddPatient, title: 'Add Patient' },
+  { name: 'Severity', component: Severity, title: 'Severity' },
+];
+
 const AppNavigator = () => {
-
   return (
-    <NavigationContainer>
-       <Stack.Navigator
-          screenOptions={{
-            headerStyle: { elevation: 0, backgroundColor: '#334155'},
-            headerTitleStyle: {
-              color: 'white',
-              fontSize: 30,
-            },
-            headerTintColor: 'white',
-            contentStyle: { backgroundColor: '#1e293b' },
-        }}>
-
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{ title: 'Login' }}
-        />
-
-        <Stack.Screen
-          name="Doctor"
-          component={Doctor}
-          options={{ title: 'Doctor' }}
-        />
-
-        <Stack.Screen
-          name="FrontDesk"
-          component={FrontDesk}
-          options={{ title: 'Front Desk' }}
-        />
-
-        <Stack.Screen
-          name="AddPatient"
-          component={AddPatient}
-          options={{ title: 'Add Patient' }}
-        />
-
-        <Stack.Screen
-          name="Severity"
-          component={Severity}
-          options={{ title: 'Severity' }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer>
+          <Stack.Navigator
+              screenOptions={{
+                  headerStyle: { elevation: 0, backgroundColor: '#334155' },
+                  headerTitleStyle: {
+                      color: 'white',
+                      fontSize: 30,
+                      fontFamily: 'Outfit_600SemiBold',
+                  },
+                  headerTintColor: 'white',
+                  contentStyle: { backgroundColor: '#1e293b' },
+              }}
+          >
+              {screens.map((screen, index) => (
+                  <Stack.Screen
+                      key={index}
+                      name={screen.name}
+                      component={screen.component}
+                      options={{ title: screen.title }}
+                  />
+              ))}
+          </Stack.Navigator>
+      </NavigationContainer>
   );
 };
 
