@@ -25,21 +25,23 @@ const styles = StyleSheet.create({
     }
 });
 
-const Login = () => {
+const Login = ({ navigation }) => {
+
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Front Desk</Text>
-        </TouchableOpacity>
-        </View>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity onPress={() => {
+                    navigation.push('FrontDesk');
+                }} style={styles.button}>
+                    <Text style={styles.buttonText}>Front Desk</Text>
+                </TouchableOpacity>
+            </View>
 
-        
-        <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Doctors</Text>
-        </TouchableOpacity>
-        </View>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.buttonText}>Doctors</Text>
+                </TouchableOpacity>
+            </View>
         </View>
 
      
