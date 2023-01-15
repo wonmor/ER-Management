@@ -7,13 +7,16 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const FrontDesk = ({ navigation }) => {
     return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> 
+          <Text style={[{fontFamily: 'Outfit_400Regular', marginBottom: 20}, styles.listTextTitle]}>
+            Incoming Patients
+          </Text>
 
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>  
             <View style={styles.listButton}>
                 <TouchableOpacity onPress={() => {
                     navigation.push('AddPatient');
                 }} style={styles.button}>
-                    <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextTitle]}>Add Patient</Text>
+                    <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextTitle]}>Add New</Text>
                 </TouchableOpacity>
             </View>
         </View>    
