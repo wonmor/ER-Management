@@ -7,7 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 const Severity = (props) => {
   const { navigation } = props;
 
-  const otherParam = navigation.getParam('otherParam', 'some default value');
+  const { patients } = props.route.params;
 
   const [rating, setRating] = useState(0);
   const [numbers, setNumbers] = useState([]);
