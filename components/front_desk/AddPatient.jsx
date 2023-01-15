@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Text } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
 const AddPatient = ({ navigation }) => {
@@ -63,15 +63,14 @@ const AddPatient = ({ navigation }) => {
         <Picker.Item label="Surgeon" value="Surgeon" />
       </Picker>
 
-      <Button
-        onPress={() => {
-          handleSubmit();
-          navigation.navigate('FrontDesk');
-        }}
-        title="Submit"
-        color="#FF0000"
-        accessibilityLabel="Add a patient to the ER waitlist."
-      />
+      <View style={styles.listButton}>
+          <TouchableOpacity onPress={() => {
+              handleSubmit();
+              navigation.navigate('FrontDesk');
+          }} style={styles.button}>
+              <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextTitle]}>Submit</Text>
+          </TouchableOpacity>
+      </View>
 
     </View>
   );
@@ -99,9 +98,40 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   button: {
-    backgroundColor: 'red',
     color: 'white',
   },
+  listButton: {
+    marginBottom: 10,
+    backgroundColor: '#334155',
+    padding: 15,
+    borderRadius: 10,
+    borderColor: '#fff',
+    borderWidth: 1,
+    elevation: 1,
+},
+listContent: {
+    margin: 10,
+    marginStart: 50,
+    marginEnd: 50
+},
+listTextHeader: {
+    textAlign: "center",
+    fontSize: 48,
+    color: "#fff"
+},
+
+listTextTitle: {
+    textAlign: "center",
+    fontSize: 24,
+    color: "#fff"
+},
+listTextDescription: {
+    textTransform: 'capitalize',
+    textAlign: "center",
+    margin: 5,
+    fontSize: 18,
+    color: "#fff"
+}
 });
 
 export default AddPatient;
