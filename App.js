@@ -29,7 +29,7 @@ const AppNavigator = () => {
             headerTintColor: 'white',
             contentStyle: { backgroundColor: '#394d6d' },
         }}>
-        {/* <Stack.Screen
+         <Stack.Screen
           name="Login"
           component={Login}
           options={{ title: 'Login' }}
@@ -43,7 +43,7 @@ const AppNavigator = () => {
           name="FrontDesk"
           component={FrontDesk}
           options={{ title: 'Front Desk' }}
-        /> */}
+        /> 
         <Stack.Screen
           name="Severity"
           component={Severity}
