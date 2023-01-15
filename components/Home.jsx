@@ -1,12 +1,29 @@
 import { StyleSheet, View, Text, Button } from 'react-native';
+import { useState, useEffect } from 'react';
+
+import db from '../config/firebase';
 
 const Home = ({ navigation }) => {
+
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextHeader]}>
+                ERMS
+            </Text>
+
+            <Text style={[{fontFamily: 'Outfit_400Regular', marginBottom: 20}, styles.listTextTitle]}>
                 Select Hospital
             </Text>
-        </View> 
+
+            <View style={styles.listButton}>
+                <TouchableOpacity onPress={() => {
+                    navigation.push('Hospital');
+                }} style={styles.button}>
+                    <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextTitle]}>Hospital</Text>
+                </TouchableOpacity>
+            </View>
+            
+        </View>
     );
 }
 

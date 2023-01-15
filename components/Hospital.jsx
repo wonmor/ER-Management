@@ -6,6 +6,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const Hospital = ({ navigation }) => {
+    
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextHeader]}>

@@ -13,6 +13,7 @@ import { useFonts, Outfit_400Regular, Outfit_600SemiBold } from '@expo-google-fo
 const Stack = createNativeStackNavigator();
 
 const screens = [
+  { name: 'Home', component: Home, title: 'Welcome' },
   { name: 'Hospital', component: Hospital, title: 'Hospital' },
   { name: 'Doctor', component: Doctor, title: 'Doctors' },
   { name: 'FrontDesk', component: FrontDesk, title: 'Front Desk' },

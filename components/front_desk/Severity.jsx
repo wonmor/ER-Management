@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { capitalizeName } from '../Globals';
 
 const Severity = (props) => {
   const { navigation } = props;
@@ -50,7 +51,7 @@ const Severity = (props) => {
                 <TouchableOpacity onPress={() => {
                   
                 }} style={styles.listButton} activeOpacity={0.8}>
-                    <Text style={[{fontFamily: 'Outfit_600SemiBold'}, styles.listTextTitle]}>{item}</Text>
+                    <Text style={[{fontFamily: 'Outfit_600SemiBold'}, styles.listTextTitle]}>{capitalizeName(item)}</Text>
                 </TouchableOpacity>
             )}
         />
