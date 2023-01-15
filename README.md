@@ -12,6 +12,8 @@ Developed by John, Sajjad, Tom, and Kevin.
 <td valign="center"><img width="200" alt="Screenshot-2" src="https://user-images.githubusercontent.com/93741234/212555581-3c4621e2-2b76-4fa0-bab6-432cddecbc75.PNG"></td>
 
 <td valign="center"><img width="200" alt="severity screen" src="https://user-images.githubusercontent.com/93741234/212555587-39445235-0585-44a8-af8f-2a9973193f29.PNG"></td>
+ 
+ </tr></table>
 
 ---
  
