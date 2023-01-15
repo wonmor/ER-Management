@@ -2,9 +2,12 @@ import Doctor from './components/Doctor';
 import Login from './components/Login';
 import FrontDesk from './components/FrontDesk';
 import Severity from './components/Severity';
+import AddPatient from './components/AddPatient';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import { useFonts, Outfit_400Regular, Outfit_600SemiBold } from '@expo-google-fonts/outfit';
 
 const Stack = createNativeStackNavigator();
 
@@ -58,6 +61,15 @@ const AppNavigator = () => {
 };
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Outfit_400Regular,
+    Outfit_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+  
   return (
     <AppNavigator />
   );

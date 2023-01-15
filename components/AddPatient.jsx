@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Text } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 
-const MyForm = ({ navigation }) => {
+const AddPatient = ({ navigation }) => {
   const [name, setName] = useState('');
   const [selectedDay, setSelectedDay] = useState('1');
   const [selectedMonth, setSelectedMonth] = useState('January');
@@ -104,6 +104,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MyForm;
+export default AddPatient;
 
 //___________________________________________

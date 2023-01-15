@@ -47,12 +47,13 @@ const Doctor = ({ navigation }) => {
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item }) => (
                     <TouchableOpacity onPress={() => {
-                        navigation.navigate('Patient', {
+                        navigation.navigate('Severity', {
                             name: item.name,
                             age: item.age,
                         });
                     }} style={styles.listButton} activeOpacity={0.8}>
-                        <Text style={styles.listText}>{item.name}</Text>
+                        <Text style={styles.listTextTitle}>{item.name}</Text>
+                        <Text style={styles.listTextDescription}>{item.field}</Text>
                     </TouchableOpacity>
                 )}
             />
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
     },
     listButton: {
         marginBottom: 10,
-        backgroundColor: '#394d6d',
+        backgroundColor: '#334155',
         padding: 15,
         borderRadius: 10,
         borderColor: '#fff',
@@ -85,8 +86,16 @@ const styles = StyleSheet.create({
         marginStart: 50,
         marginEnd: 50
     },
-    listText: {
+    listTextTitle: {
         textAlign: "center",
+        fontWeight: "bold",
+        fontSize: 24,
+        color: "#fff"
+    },
+    listTextDescription: {
+        textTransform: 'capitalize',
+        textAlign: "center",
+        margin: 5,
         fontSize: 18,
         color: "#fff"
     }
