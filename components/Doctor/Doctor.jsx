@@ -49,7 +49,8 @@ const Doctor = ({ navigation }) => {
                     <TouchableOpacity onPress={() => {
                         navigation.navigate('Severity', {
                             name: item.name,
-                            age: item.age,
+                            field: item.field,
+                            patients: item.patients
                         });
                     }} style={styles.listButton} activeOpacity={0.8}>
                         <Text style={[{fontFamily: 'Outfit_600SemiBold'}, styles.listTextTitle]}>{item.name}</Text>
