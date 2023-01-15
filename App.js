@@ -40,7 +40,7 @@ const AppNavigator = () => {
           options={{ title: 'Doctor' }}
         />
         <Stack.Screen
-          name="Front Desk"
+          name="FrontDesk"
           component={FrontDesk}
           options={{ title: 'Front Desk' }}
         /> */}
