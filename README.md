@@ -2,6 +2,14 @@
 
 Developed by John, Sajjad, Tom and Kevin
 
+App Demo:
+![IMG-1852](https://user-images.githubusercontent.com/93741234/212555572-82ca2484-8d32-4fe0-b082-91a6f69cb451.PNG)
+
+![IMG-1853](https://user-images.githubusercontent.com/93741234/212555581-3c4621e2-2b76-4fa0-bab6-432cddecbc75.PNG)
+
+<img width="153" alt="severity screen" src="https://user-images.githubusercontent.com/93741234/212555587-39445235-0585-44a8-af8f-2a9973193f29.PNG">
+
+
 <img width="512" alt="slides 3" src="https://user-images.githubusercontent.com/93741234/212554740-55b9ed34-93ee-4a34-a128-bd7d4bba9b55.PNG">
 
 
