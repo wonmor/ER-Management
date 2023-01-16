@@ -1,6 +1,7 @@
 # ERMS: Emergency Department, Reimagined
 
-Developed by John, Sajjad, Tom, and Kevin.
+A **DeltaHacks 2023** Submission @ McMaster University.
+Developed by **John**, **Sajjad**, **Tom**, and **Kevin**.
 
 An emergency department management system that admits patients in the fairest way possible, taking into account both the patient's wait time and medical attention urgency.
 
@@ -25,8 +26,8 @@ An emergency department management system that admits patients in the fairest wa
   
 ## Technology Used
   
-- React Native (Expo)
-- Google Firebase (Firestore)
+- **React Native** (Expo)
+- **Google Firebase** (Firestore)
   
 ---
 
