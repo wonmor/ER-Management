@@ -24,7 +24,7 @@ An emergency department management system that admits patients in the fairest wa
 
 ---
   
-## Technology Used
+## Technologies Used
   
 - **React Native** (Expo)
 - **Google Firebase** (Firestore)
