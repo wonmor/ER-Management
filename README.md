@@ -21,10 +21,10 @@ An emergency department management system that admits patients in the fairest wa
  </tr></table>
  
  <table><tr>
- 
-<td valign="center"><img width="600" alt="firebase sys" src="https://user-images.githubusercontent.com/93741234/212555745-b0c35132-e792-4bdc-8adc-5f1da87afafc.png"/></td>
 
 <td valign="center"><img width="600" alt="team_photo" src="https://user-images.githubusercontent.com/35755386/212575607-3432ff13-c3a8-4596-b27d-cd5a82c7f2f4.jpg"/></td>
+ 
+ <td valign="center"><img width="600" alt="firebase sys" src="https://user-images.githubusercontent.com/93741234/212555745-b0c35132-e792-4bdc-8adc-5f1da87afafc.png"/></td>
 
  </tr></table>
  
