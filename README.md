@@ -2,6 +2,10 @@
 
 Developed by John, Sajjad, Tom, and Kevin.
 
+An emergency department management system that admits patients in the fairest way possible, taking into account both the patient's wait time and medical attention urgency.
+
+[Devpost](https://devpost.com/software/erms?ref_content=user-portfolio&ref_feature=in_progress)
+
 ---
 
 
@@ -17,21 +21,17 @@ Developed by John, Sajjad, Tom, and Kevin.
 
 ---
  
-<img width="886" alt="firebase sys" src="https://user-images.githubusercontent.com/93741234/212555745-b0c35132-e792-4bdc-8adc-5f1da87afafc.png" />
-<img width="512" alt="slides 3" src="https://user-images.githubusercontent.com/93741234/212554740-55b9ed34-93ee-4a34-a128-bd7d4bba9b55.PNG" />
+<img width="500" alt="firebase sys" src="https://user-images.githubusercontent.com/93741234/212555745-b0c35132-e792-4bdc-8adc-5f1da87afafc.png" />
+<img width="500" alt="slides 3" src="https://user-images.githubusercontent.com/93741234/212554740-55b9ed34-93ee-4a34-a128-bd7d4bba9b55.PNG" />
+
+---
   
 ## Technology Used
   
 - React Native (Expo)
 - Google Firebase (Firestore)
   
-  ---
-  
-
-
-
-
-
+---
 
 <img width="511" alt="slides 1" src="https://user-images.githubusercontent.com/93741234/212554617-e5857a70-1fb8-46b5-84a7-6ec7e091c52a.PNG">
 
