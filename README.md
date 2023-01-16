@@ -20,7 +20,7 @@ An emergency department management system that admits patients in the fairest wa
  
  </tr></table>
  
-<img width="500" alt="firebase sys" src="https://user-images.githubusercontent.com/93741234/212555745-b0c35132-e792-4bdc-8adc-5f1da87afafc.png" />
+<img width="600" alt="firebase sys" src="https://user-images.githubusercontent.com/93741234/212555745-b0c35132-e792-4bdc-8adc-5f1da87afafc.png" />
 
 ---
   
