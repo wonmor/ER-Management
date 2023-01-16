@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { useState, useEffect } from 'react';
 
 import db from '../config/firebase';
@@ -19,7 +19,8 @@ const Home = ({ navigation }) => {
                 <TouchableOpacity onPress={() => {
                     navigation.push('Hospital');
                 }} style={styles.button}>
-                    <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextTitle]}>Hospital</Text>
+                    <Text style={[{fontFamily: 'Outfit_600SemiBold'}, styles.listTextTitle]}>McMaster</Text>
+                    <Text style={[{fontFamily: 'Outfit_400Regular'}, styles.listTextTitle]}>Student Wellness Centre</Text>
                 </TouchableOpacity>
             </View>
             
