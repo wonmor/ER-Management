@@ -1,4 +1,4 @@
-# ERMS: Emergency Department, Reimagined
+# EMERGY: Emergency Department, Reimagined
 
 A **DeltaHacks 2023** Submission @ McMaster University.
 Developed by **John**, **Sajjad**, **Tom**, and **Kevin**.
