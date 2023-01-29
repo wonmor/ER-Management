@@ -83,13 +83,20 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+  min-height: 200px;
+}
+
+.featured {
+  border: transparent;
+  background-color: white;
+  color: #1e293b;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #2d8dfa;
+  border-color: #2d8dfa;
 }
 
 .card h2 {
@@ -116,10 +123,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
-  }
   .code {
     background: #111;
   }
