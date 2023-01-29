@@ -24,6 +24,7 @@ const Download: NextPage = () => {
                     <br />
                     Anywhere, anytime, on any device.
                     <br />
+                    <br />
                     Visit Google Play or the App Store.
                 </p>
             </main>

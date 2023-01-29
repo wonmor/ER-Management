@@ -24,6 +24,7 @@ const Pricing: NextPage = () => {
                     <br />
                     For larger hospitals, we offer a free trial for 30 days.
                     <br />
+                    <br />
                     After that, you can choose to pay only <span className={styles.highlighted}>$8/month</span> per employee.
                 </p>
             </main>
