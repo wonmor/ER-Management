@@ -20,7 +20,7 @@ const Download: NextPage = () => {
                 </h1>
 
                 <p className={styles.description}>
-                    Available on Web, iOS, and Android.
+                    Available on Web, iOS, watchOS, and Android.
                     <br />
                     Anywhere, anytime, on any device.
                     <br />

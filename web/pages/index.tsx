@@ -37,7 +37,7 @@ const Home: NextPage = () => {
         <p className={styles.description}>
           No-BS emergency department management system.
           <br />
-          Available on Web, iOS, and Android.
+          Available on Web, iOS, watchOS, and Android.
         </p>
 
         <div className={styles.grid}>
