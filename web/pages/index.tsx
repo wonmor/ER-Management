@@ -16,17 +16,23 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>ERMS</title>
+        <title>EMERGY</title>
         <meta name="description" content="Handcrafted for those who save people." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <Link href="/">
-          <h1 className={styles.title}>
-            ERMs.
-          </h1>
+          <header>
+            <h1 className={styles.title}>
+              EMERGY
+            </h1>
+          </header>
         </Link>
+
+        <h1 className={styles.title}>
+            Welcome.
+        </h1>
 
         <p className={styles.description}>
           No-BS emergency department management system.
@@ -86,6 +92,12 @@ const Home: NextPage = () => {
       </main>
 
       <footer className={styles.footer}>
+        <h1>
+          Proudly <span className={styles.highlighted}>Canadian</span>.
+        </h1>
+
+        <br />
+
         <span>
           Developed by John, Sajjad, Tom, and Kevin.
         </span>

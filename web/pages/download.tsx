@@ -6,18 +6,18 @@ import Link from 'next/link'
 const Download: NextPage = () => {
     return (
         <div className={styles.container}>
-            <Head>
-                <title>ERMs</title>
-                <meta name="description" content="Handcrafted for those who save people." />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-
             <main className={styles.main}>
                 <Link href="/">
-                    <h1 className={styles.title}>
-                        Download.
-                    </h1>
+                    <header>
+                        <h1 className={styles.title}>
+                        EMERGY
+                        </h1>
+                    </header>
                 </Link>
+
+                <h1 className={styles.title}>
+                    Download.
+                </h1>
 
                 <p className={styles.description}>
                     Available on Web, iOS, and Android.

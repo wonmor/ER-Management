@@ -2,6 +2,10 @@
   padding: 0 2rem;
 }
 
+.highlighted {
+  color: #fda4af;
+}
+
 .main {
   min-height: 100vh;
   padding: 4rem 0;
@@ -15,6 +19,7 @@
 .footer {
   display: flex;
   flex: 1;
+  flex-direction: column;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;

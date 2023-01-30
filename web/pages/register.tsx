@@ -5,6 +5,7 @@ import React, { useRef, useEffect, MutableRefObject } from "react"
 import Head from 'next/head'
 import styles from '../styles/Hospital.module.css'
 import Link from 'next/link'
+import Script from 'next/script'
 
 const AutoComplete = () => {
     const autoCompleteRef: MutableRefObject<any> = useRef();
@@ -31,18 +32,18 @@ const AutoComplete = () => {
 const Register: NextPage = () => {
     return (
         <div className={styles.container}>
-            <Head>
-                <title>ERMs</title>
-                <meta name="description" content="Handcrafted for those who save people." />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-
             <main className={styles.main}>
                 <Link href="/">
-                    <h1 className={styles.title}>
-                        Register.
-                    </h1>
+                    <header>
+                        <h1 className={styles.title}>
+                        EMERGY
+                        </h1>
+                    </header>
                 </Link>
+
+                <h1 className={styles.title}>
+                    Register.
+                </h1>
 
                 <p className={styles.description}>
                    What is your hospital&apos;s name?

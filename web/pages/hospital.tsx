@@ -209,18 +209,18 @@ const Hospital: NextPage = () => {
 
     return (
         <div className={styles.container}>
-            <Head>
-                <title>ERMS</title>
-                <meta name="description" content="Handcrafted for those who save people." />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-
             <main className={styles.main}>
                 <Link href="/">
-                    <h1 className={styles.title}>
-                        {sanitizedUserType}.
-                    </h1>
+                    <header>
+                        <h1 className={styles.title}>
+                        EMERGY
+                        </h1>
+                    </header>
                 </Link>
+
+                <h1 className={styles.title}>
+                    {sanitizedUserType}.
+                </h1>
 
                 <p className={styles.description}>
                     Which hospital are you from?
