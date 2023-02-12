@@ -5,7 +5,7 @@ Developed by **John**, **Sajjad**, **Tom**, and **Kevin**.
 
 An emergency department management system that admits patients in the fairest way possible, taking into account both the patient's wait time and medical attention urgency.
 
-### [OPEN WEB APP](https://er-management.vercel.app)
+### [OPEN WEB APP](https://emergy.ca)
 
 ### [VISIT OUR DEVPOST](https://devpost.com/software/erms?ref_content=user-portfolio&ref_feature=in_progress)
 
