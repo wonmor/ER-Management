@@ -6,6 +6,12 @@ import Link from 'next/link'
 const Pricing: NextPage = () => {
     return (
         <div className={styles.container}>
+            <Head>
+                <title>EMERGY</title>
+                <meta name="description" content="Handcrafted for those who save people." />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            
             <main className={styles.main}>
                 <Link href="/">
                     <header>
@@ -26,6 +32,10 @@ const Pricing: NextPage = () => {
                     <br />
                     <br />
                     After that, you can choose to pay only <span className={styles.highlighted}>$8/month</span> per employee.
+                </p>
+
+                <p className={styles.description}>
+                    <Link href="/register/1"><span className={styles.linkButton}>Register as a new hospital</span></Link>
                 </p>
             </main>
         </div>

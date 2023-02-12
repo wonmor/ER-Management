@@ -6,6 +6,12 @@ import Link from 'next/link'
 const Download: NextPage = () => {
     return (
         <div className={styles.container}>
+            <Head>
+                <title>EMERGY</title>
+                <meta name="description" content="Handcrafted for those who save people." />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+
             <main className={styles.main}>
                 <Link href="/">
                     <header>
@@ -25,7 +31,7 @@ const Download: NextPage = () => {
                     Anywhere, anytime, on any device.
                     <br />
                     <br />
-                    Visit Google Play or the App Store.
+                    Visit <Link href="/"><span className={styles.linkButton}>Google Play</span></Link> or the <Link href="/"><span className={styles.linkButton}>App Store</span></Link>.
                 </p>
             </main>
         </div>

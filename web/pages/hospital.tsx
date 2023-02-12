@@ -209,6 +209,12 @@ const Hospital: NextPage = () => {
 
     return (
         <div className={styles.container}>
+            <Head>
+                <title>EMERGY</title>
+                <meta name="description" content="Handcrafted for those who save people." />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            
             <main className={styles.main}>
                 <Link href="/">
                     <header>
@@ -229,7 +235,7 @@ const Hospital: NextPage = () => {
                 <AutoComplete data={hospitalNames} />
 
                 <p className={styles.description}>
-                    or <Link href="/register"><span className={styles.linkButton}>register as a new hospital</span></Link>
+                    or <Link href="/register/1"><span className={styles.linkButton}>register as a new hospital</span></Link>
                 </p>
                 
             </main>
