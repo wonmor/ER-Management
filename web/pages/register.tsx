@@ -62,7 +62,7 @@ const Register: NextPage = () => {
                    What is your hospital&apos;s name?
                 </p>
 
-                {window && window.google && window.google.maps && (
+                {window !== undefined && (
                     <SearchBox maps={window.google.maps} placeholder="Search hospitals" />
                 )}
             </main>
