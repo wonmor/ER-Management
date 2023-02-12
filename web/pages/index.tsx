@@ -99,7 +99,7 @@ const Home: NextPage = () => {
         <br />
 
         <span>
-          Developed by John, Sajjad, Tom, and Kevin.
+          Developed by John Seong.
         </span>
       </footer>
     </div>

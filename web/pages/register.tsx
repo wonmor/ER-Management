@@ -1,33 +1,46 @@
-import type { NextPage } from 'next'
-import { useRouter } from "next/router"
-import { capitalizeAfterSpace } from './index'
-import React, { useRef, useEffect, MutableRefObject } from "react"
+import { NextPage } from 'next'
+import React, { useRef, useEffect, useCallback } from "react"
 import Head from 'next/head'
 import styles from '../styles/Hospital.module.css'
 import Link from 'next/link'
-import Script from 'next/script'
 
-const AutoComplete = () => {
-    const autoCompleteRef: MutableRefObject<any> = useRef();
-    const inputRef: MutableRefObject<any> = useRef();
-    const options = {
-     componentRestrictions: { country: "ng" },
-     fields: ["address_components", "geometry", "icon", "name"],
-     types: ["establishment"]
-    };
+interface SearchBoxProps {
+    className?: string;
+    maps: any;
+    onPlacesChanged?: (places: any) => void;
+    placeholder?: string;
+}
+
+const SearchBox = ({ maps, onPlacesChanged, placeholder }: SearchBoxProps) => {
+    const input = useRef<HTMLInputElement>(null);
+    const searchBox = useRef<any>(null);
+
+    const handleOnPlacesChanged = useCallback(() => {
+        if (onPlacesChanged && searchBox.current) {
+            onPlacesChanged(searchBox.current.getPlaces());
+        }
+    }, [onPlacesChanged, searchBox]);
+
     useEffect(() => {
-     autoCompleteRef.current = new window.google.maps.places.Autocomplete(
-      inputRef.current,
-      options
-     );
-    });
+        if (!searchBox.current && maps) {
+            searchBox.current = new maps.places.SearchBox(input.current!);
+            searchBox.current.addListener('places_changed', handleOnPlacesChanged);
+        }
+
+        return () => {
+            if (maps) {
+                searchBox.current = null;
+                maps.event.clearInstanceListeners(searchBox);
+            }
+        };
+    }, [maps, handleOnPlacesChanged]);
 
     return (
-        <div>
-            <input className={styles.search} ref={inputRef} />
+        <div className={styles.autocomplete}>
+            <input className={styles.search} ref={input} placeholder={placeholder} type="text" />
         </div>
     );
-}
+};
 
 const Register: NextPage = () => {
     return (
@@ -49,7 +62,7 @@ const Register: NextPage = () => {
                    What is your hospital&apos;s name?
                 </p>
 
-                <AutoComplete />
+                <SearchBox maps={window.google.maps} placeholder="Search hospitals" />
             </main>
         </div>
     )
