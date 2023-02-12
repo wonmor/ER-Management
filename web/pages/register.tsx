@@ -45,6 +45,7 @@ const SearchBox = ({ maps, onPlacesChanged, placeholder }: SearchBoxProps) => {
 const Register: NextPage = () => {
     const [localWindow, setLocalWindow] = React.useState<any>(undefined);
 
+    // useEffect ensures the code in the block to be run only on the client side...
     useEffect(() => {
         setLocalWindow(window);
     }, [])
