@@ -43,6 +43,12 @@ const SearchBox = ({ maps, onPlacesChanged, placeholder }: SearchBoxProps) => {
 };
 
 const Register: NextPage = () => {
+    const [localWindow, setLocalWindow] = React.useState<any>(undefined);
+
+    useEffect(() => {
+        setLocalWindow(window);
+    }, [])
+
     return (
         <div className={styles.container}>
             <main className={styles.main}>
@@ -62,8 +68,8 @@ const Register: NextPage = () => {
                    What is your hospital&apos;s name?
                 </p>
 
-                {window !== undefined && (
-                    <SearchBox maps={window.google.maps} placeholder="Search hospitals" />
+                {localWindow !== undefined && (
+                    <SearchBox maps={localWindow.google.maps} placeholder="Search hospitals" />
                 )}
             </main>
         </div>
