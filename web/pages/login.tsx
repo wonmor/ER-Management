@@ -1,10 +1,7 @@
 import type { NextPage } from 'next'
 import { useRouter } from "next/router"
-import { capitalizeAfterSpace } from './index'
-import React, { useState, KeyboardEvent, useEffect } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import Script from 'next/script'
+import { capitalizeAfterSpace, Metadata } from './index'
+import React from 'react'
 import styles from '../styles/Hospital.module.css'
 import Link from 'next/link'
 
@@ -19,11 +16,7 @@ const Login: NextPage = () => {
 
     return (
         <div className={styles.container}>
-            <Head>
-                <title>EMERGY</title>
-                <meta name="description" content="Handcrafted for those who save people." />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <Metadata />
             
             <main className={styles.main}>
                 <Link href="/">

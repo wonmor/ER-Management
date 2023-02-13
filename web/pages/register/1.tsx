@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useCallback } from "react"
 import Head from 'next/head'
 import styles from '../../styles/Hospital.module.css'
 import Link from 'next/link'
+import { Metadata } from '..'
 
 interface SearchBoxProps {
     className?: string;
@@ -52,11 +53,7 @@ const RegisterPageOne: NextPage = () => {
 
     return (
         <div className={styles.container}>
-            <Head>
-                <title>EMERGY</title>
-                <meta name="description" content="Handcrafted for those who save people." />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <Metadata />
 
             <main className={styles.main}>
                 <Link href="/">
